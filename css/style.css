@@ -15,8 +15,21 @@
 }
 
 #board{
-    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));  /*linear-gradient se 2 alg alg color mix kr sakte*/
     width: 90vmin;
     height: 92vmin;
     border: 2px solid black;
+
+    /*grid with 18 rows and 18 column*/
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+}
+
+.head{
+    background-color: red;
+}
+
+.food{
+    background-color: purple;
 }
