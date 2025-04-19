@@ -6,6 +6,8 @@ const gameOverSound = new Audio('assets/music/gameover.mp3');
 const moveSound = new Audio('assets/music/move.mp3');
 const musicSound = new Audio('assets/music/music.mp3');
 
+let speed = 0;
+let lastPaintTime = 0;
 
 // major component in any game is game loop....ki page barr barr render hota h...isko set-timeout se v kr sakte h....
 //but animations ko render krne me highly recomended ki... window.requestAnimationFrame(main) isko use kre
@@ -15,5 +17,12 @@ const musicSound = new Audio('assets/music/music.mp3');
 // Game Functions
 function main(ctime) {
     window.requestAnimationFrame(main);
-    console.log(ctime)
+    // console.log(ctime)
+
+    if((ctime - lastPaintTime)/1000 < 1/speed){
+        return; //return nothing when true
+    }
+    lastPaintTime = ctime; //when false then update
+    gameEngine();
+
 }
