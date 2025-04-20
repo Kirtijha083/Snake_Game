@@ -10,7 +10,7 @@ let speed = 0;
 let lastPaintTime = 0;
 let snakeArr = [
     {x: 13, y: 15}
-];
+]; //head of snake
 
 
 // major component in any game is game loop....ki page barr barr render hota h...isko set-timeout se v kr sakte h....
