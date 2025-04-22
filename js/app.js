@@ -31,14 +31,22 @@ function gameEngine() {
   // Part 1: Updating the snake array & Food
 
   // Part 2: Display the snake and food
-  board.innerHTML = "";
-  snakeArr.forEach((e, index) => {
-    snakeElement = document.createElement('div')
-    snakeElement.style.gridRowStart = e.y; //row = y
-    snakeElement.style.gridColumnStart = e.x; //col = x
-    snakeElement.classList.add('head')
-    board.appendChild(snakeElement);
-  });
+ // Display the snake
+ board.innerHTML = "";
+ snakeArr.forEach((e, index)=>{
+     snakeElement = document.createElement('div');
+     snakeElement.style.gridRowStart = e.y;
+     snakeElement.style.gridColumnStart = e.x;
+
+     if(index === 0){
+         snakeElement.classList.add('head');
+     }
+     else{
+         snakeElement.classList.add('snake');
+     }
+     board.appendChild(snakeElement);
+ });
+ 
 }
 
 
